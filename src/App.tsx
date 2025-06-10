@@ -8,9 +8,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Background from './components/Background';
 import FloatingBirds from './components/FloatingBirds';
+import { siteTitle } from './constants/meta';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    document.title = siteTitle;
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
