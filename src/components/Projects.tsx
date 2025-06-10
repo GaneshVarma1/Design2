@@ -39,12 +39,26 @@ const Projects: React.FC = () => {
                     {project.tech}
                   </p>
                   <div className="flex space-x-2">
-                    <button className={`${colors[4]} ${colors[5]} text-white px-3 py-1 rounded text-sm font-mono transition-colors`}>
-                      View Project
-                    </button>
-                    <button className={`${colors[6]} ${colors[7]} text-white px-3 py-1 rounded text-sm font-mono transition-colors`}>
-                      Source Code
-                    </button>
+                    {project.projectLink && (
+                      <a
+                        href={project.projectLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${colors[4]} ${colors[5]} text-white px-3 py-1 rounded text-sm font-mono transition-colors`}
+                      >
+                        View Project
+                      </a>
+                    )}
+                    {project.sourceLink && (
+                      <a
+                        href={project.sourceLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${colors[6]} ${colors[7]} text-white px-3 py-1 rounded text-sm font-mono transition-colors`}
+                      >
+                        Source Code
+                      </a>
+                    )}
                   </div>
                 </div>
               );
